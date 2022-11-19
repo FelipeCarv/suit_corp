@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suit Corporation - Cadastro</title>
+</head>
+<body>
+    
+    <main>
+    <section>
+        <img src="../../img/log-cad.svg" alt="Logo da empresa" class="logo" title="Logo - Suit Corporation">
+        <a href="../../index.html"><img src="../../img/arrow_black.svg" alt="Botão Voltar" class="logo-voltar" title="Voltar a tela Inicial"></a>
+        
+        <form action="#">
+            <div class="areas">
+                <div class="area-esquerda">
+                    <div class="area-nome">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+                    </div>
+    
+                    <div class="area-cpf">
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" required>
+                    </div>
+    
+                    <div class="area-email">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+                    </div>
+    
+                    <div class="area-dataNascimento">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input type="date" name="nascimento" id="nascimento" required>
+                    </div>
+                    
+                    <div class="area-logradouro">
+                        <label for="logradouro">Logradouro</label>
+                        <input type="text" name="logradouro" id="logradouro" placeholder="Rua, avenida" required>
+                    </div>
+                    
+                    <div class="area-bairro">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" name="bairro" id="bairro" required>
+                    </div>
+                </div>
+                
+                <div class="area-direita">
+                    <div class="area-sobrenome">                
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" name="sobrenome" id="sobrenome" placeholder="Seu sobrenome" required>
+                    </div>
+                
+                    <div class="area-nOAB">
+                        <label for="numeroOab">Número da OAB</label>
+                        <div class="campos">
+                            <select id="ufS" name="ufS" required>
+                                <option>UF</option>
+                                <option value="CE">Ceará</option>
+                                <option value="RN">Rio grande do Norte</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PA">Paraíba</option>
+                                <option value="Al">Alagoas</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="BA">Bahia</option>
+                                <option value="PI">Piauí</option>
+                                <option value="MA">Maranhão</option>
+                            </select>
+                            <span>-</span>
+                            <input type="text" name="numeroOab" id="numeroOab" placeholder="00000" required>
+                        </div>
+                    </div>
+    
+                    <div class="area-senha">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" required>
+                    </div>
+    
+                    <div class="area-telefone">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" name="telefone" id="telefone" placeholder="(00)0000-0000" required>
+                    </div>
+                    
+                    <div class="num">
+                        <div class="area-numero">
+                            <label for="numero">Número</label>
+                            <input type="text" name="numero" id="numero" placeholder="Nº" required>
+                        </div>
+
+                        
+                        <div class="area-uf">
+                            <label for="uf">UF</label>
+                            <select id="uf" name="uf" required>
+                                <option>UF</option>
+                                <option value="CE">Ceará</option>
+                                <option value="RN">Rio grande do Norte</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PA">Paraíba</option>
+                                <option value="Al">Alagoas</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="BA">Bahia</option>
+                                <option value="PI">Piauí</option>
+                                <option value="MA">Maranhão</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="area-complemento">
+                        <label for="complemento">Complemento</label>
+                        <input type="text" name="complemento" id="complemento" placeholder="Casa, Apt" required>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="alterar" type="button" onclick="pegarDadosSalvarLocalStore()">CADASTRAR</button>
+        
+        </form>
+    </section>
+
+     <!--MODAL-->
+     <div id="modal-planos" class="modal-container">
+        <div class="modal">
+            <div class="modal-chamada">
+                <div class="modal-chamada-info">
+                    <img src="/Suit-Corporation/img/task_alt.png" alt="">
+                    <p>Cadastro realizado com sucesso.</p>
+                </div>
+            </div>
+            <div class="btn-fechar">  
+              <a id="fechar" href=""><img src="/Suit-Corporation/img/cancel.png" alt="">Fechar</a>
+            </div>
+        </div>
+    </div>
+</main>
+  
+  <script src="../../db/bancoEstatico.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script>
+        $("#cpf").mask("000.000.000-00");
+        $("#telefone").mask("(00)0 0000-0000");
+   </script>
+   <script>
+    // ============== MODAL PLANOS ==============
+  
+     const btnAlterar = document.getElementById('alterar');
+     const btnFechar = document.getElementById('fechar')
+  
+     btnAlterar.addEventListener('click', (e)=>{
+         e.preventDefault();
+         const modal = document.getElementById('modal-planos');
+         modal.classList.add('mostrar');
+     });
+  
+     btnFechar.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const modal = document.getElementById('modal-planos');
+        modal.classList.remove('mostrar');
+     });
+  
+  </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    width: auto;
+    height: 4.375rem;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > .logo > img {
+    margin: .75rem 3.4375rem;
+    width: 11.25rem;  
+}
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    list-style: none;
+  }
+
+.buttons{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.125rem;
+    margin: 1.25rem;
+    border: .125rem solid #FFBB00;
+    padding: .375rem 1.25rem;
+    border-radius: .3125rem;
+    text-decoration: none;
+}
+
+/* Botão Login */
+ul li:nth-child(1) .buttons{
+    color: #FFBB00;
+    background: #111;
+}
+
+/* Botão Cadastrar */
+ul li:nth-child(2) .buttons{
+    color: #111;
+    background: #FFBB00;
+}
+
+.intro_inicial{
+    align-items: center;
+}
+.intro_inicial > img{
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 3.125rem;
+}
+
+.titulo{
+    margin-top: .3125rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.75rem;
+    text-align:center;
+}
+
+.subTitulo{
+    margin-top: .75rem;
+    font-family: 'Poppins', sans-serif;;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.6875rem;
+    text-align:center;
+}
+
+.footer{  
+    font-family: 'Poppins', sans-serif;;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #717171;
+    margin-top: 12.5rem;
+    text-align: center;
+}
